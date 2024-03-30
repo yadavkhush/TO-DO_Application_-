@@ -6,14 +6,14 @@ function TaskList() {
   const items = useSelector((state) => state.tasks);
   const dispatch = useDispatch();
 
-  const handleDelete = (index) => {
+  const handleDelete = (index) => {//delete the each items after clicking on items delete button
     dispatch(deleteTask(index));
   };
 
   return (
     <div>
       <ul>
-        {items.map((item, index) => (
+        {items.map((item, index) => (//rendering the list of items 
           <li key={index}>
             {item}
             <button onClick={() => handleDelete(index)}>Delete</button>
